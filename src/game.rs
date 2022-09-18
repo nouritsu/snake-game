@@ -25,6 +25,8 @@ pub struct Game {
 
     game_over: bool,
     waiting_time: f64,
+
+    score: i32,
 }
 
 impl Game {
@@ -38,7 +40,12 @@ impl Game {
             width,
             height,
             game_over: false,
+            score: 0,
         }
+    }
+
+    pub fn get_score(&self) -> i32 {
+        self.score
     }
 
     pub fn key_pressed(&mut self, key: Key) {
@@ -105,6 +112,7 @@ impl Game {
         let (head_x, head_y) = self.snake.head_position();
         if self.food_exists && self.food_x == head_x && self.food_y == head_y {
             self.food_exists = false;
+            self.score += 1;
             self.snake.restore_tail();
         }
     }

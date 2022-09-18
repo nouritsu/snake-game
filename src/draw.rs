@@ -1,3 +1,5 @@
+use std::i32;
+
 use piston_window::types::Color;
 use piston_window::{rectangle, Context, G2d};
 
@@ -47,3 +49,5 @@ pub fn draw_rectangle(
         g,
     )
 }
+
+// pub fn display_score(colour: Color, x: i32, y: i32, con: &Context, g: &mut G2d) {}

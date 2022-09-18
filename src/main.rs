@@ -29,7 +29,7 @@ fn main() {
         }
         window.draw_2d(&event, |c, g, _| {
             clear(BACK_COLOUR, g);
-            game.draw(&c, g)
+            game.draw(&c, g);
         });
 
         event.update(|arg| game.update(arg.dt));
